@@ -85,7 +85,7 @@ export default function Home() {
                 <div className="mt-12 lg:mt-0 lg:col-span-6">
                     <div className="w-full h-auto  bg-transparent">
                         <img 
-                            src={"./src/assets/cashflowmoney.png"} 
+                            src={"/cashflowmoney.png"} 
                             alt="Cash Flow Money" 
                             className="rounded-lg"
                         />
