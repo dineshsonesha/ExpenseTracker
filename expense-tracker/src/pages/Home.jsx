@@ -1,9 +1,10 @@
 import React from 'react';
-import { useClerk } from '@clerk/clerk-react';
+import { useClerk, useUser } from '@clerk/clerk-react';
 import { LineChart, Shield, Smartphone, Zap, Wallet, Users } from 'lucide-react';
 
 export default function Home() {
   const { openSignIn } = useClerk();
+  const { user } = useUser();
 
   const features = [
     {
@@ -73,12 +74,12 @@ export default function Home() {
                             ExpenseTracker is the simplest way to manage your personal finances. Gain insights, save more, and achieve your financial goals.
                         </p>
                         <div className="mt-8">
-                            <button
+                            {!user && (<button
                                 onClick={() => openSignIn()}
                                 className="px-8 py-4 text-lg font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg transition-transform hover:scale-105"
                             >
                                 Get Started for Free
-                            </button>
+                            </button>)}
                         </div>
                     </div>
                 </div>
